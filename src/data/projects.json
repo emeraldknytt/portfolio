@@ -1,0 +1,41 @@
+[
+  {
+    "id": "ai-lead-qualifier",
+    "title": "AI Lead Qualifier",
+    "summary": "PLACEHOLDER: scores inbound leads with an LLM and routes the good ones to sales.",
+    "description": "PLACEHOLDER DESCRIPTION. Explain the problem this workflow solves, what triggers it, the main steps it runs and the result. Two to four sentences is plenty for a recruiter skimming the page.",
+    "tools": ["n8n", "OpenAI", "Webhooks", "Google Sheets"],
+    "tags": ["AI", "Data"],
+    "image": "/projects/placeholder.svg",
+    "githubUrl": "https://github.com/YOUR-USERNAME/ai-lead-qualifier",
+    "type": "automation",
+    "videoUrl": "",
+    "caseStudy": ""
+  },
+  {
+    "id": "inbox-triage",
+    "title": "Inbox Triage Assistant",
+    "summary": "PLACEHOLDER: labels incoming email, drafts replies and flags anything urgent.",
+    "description": "PLACEHOLDER DESCRIPTION. Explain the problem this workflow solves, what triggers it, the main steps it runs and the result.",
+    "tools": ["n8n", "Gmail API", "OpenAI"],
+    "tags": ["Email", "AI"],
+    "image": "/projects/placeholder.svg",
+    "githubUrl": "https://github.com/YOUR-USERNAME/inbox-triage",
+    "type": "automation",
+    "videoUrl": "",
+    "caseStudy": ""
+  },
+  {
+    "id": "weekly-report-sync",
+    "title": "Weekly Report Sync",
+    "summary": "PLACEHOLDER: pulls numbers from several tools into one sheet and emails a summary.",
+    "description": "PLACEHOLDER DESCRIPTION. Explain the problem this workflow solves, what triggers it, the main steps it runs and the result.",
+    "tools": ["Make.com", "Google Sheets", "REST APIs"],
+    "tags": ["Data", "Email"],
+    "image": "/projects/placeholder.svg",
+    "githubUrl": "https://github.com/YOUR-USERNAME/weekly-report-sync",
+    "type": "automation",
+    "videoUrl": "",
+    "caseStudy": ""
+  }
+]

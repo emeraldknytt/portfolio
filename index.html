@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- EDIT: page title and description (shown in Google and when the link is shared) -->
+    <title>Uchechukwu Lawal | Automation Builder: n8n &amp; AI Workflows</title>
+    <meta
+      name="description"
+      content="Portfolio of Uchechukwu Lawal: n8n, Make.com and AI automation workflows, each with its GitHub repo."
+    />
+
+    <!-- EDIT: once deployed, replace https://YOUR-SITE-URL with your real address.
+         Social previews need the full address of the image, not a relative path. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Uchechukwu Lawal | Automation Builder" />
+    <meta
+      property="og:description"
+      content="n8n, Make.com and AI automation workflows, each with its GitHub repo."
+    />
+    <meta property="og:url" content="https://YOUR-SITE-URL/" />
+    <meta property="og:image" content="https://YOUR-SITE-URL/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://YOUR-SITE-URL/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Applies the saved theme before the page paints, so there is no flash. Dark is the default. -->
+    <script>
+      try {
+        var saved = localStorage.getItem('theme')
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.dataset.theme = saved
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,476 @@
+/* ─────────────────────────────────────────────────────────────
+   THEME
+   Light/dark mode is only a swap of these variables.
+   The accent is used ONLY for interactive states (hover, active,
+   selected filter, current nav item).
+   Contrast: #8B5CF6 on black = 5.0:1. On white it is only 4.2:1,
+   so light mode uses the slightly deeper #7C3AED (5.7:1).
+   ───────────────────────────────────────────────────────────── */
+:root,
+:root[data-theme='dark'] {
+  --bg: #000000;
+  --text: #d4d4d8;
+  --text-strong: #f4f4f5;
+  --muted: #8f8f98;
+  --line: #2a2a2e;
+  --accent: #8b5cf6;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --text-strong: #1d1d1d;
+  --muted: #5f5f66;
+  --line: #e0e0e4;
+  --accent: #7c3aed;
+  color-scheme: light;
+}
+
+:root {
+  --font: 'Poppins', system-ui, -apple-system, 'Segoe UI', 'Inter', Roboto, sans-serif;
+  /* 760px wide up to a 760px screen. On larger screens the content grows by
+     15% of the extra space, which trims the empty margin on each side by 15%. */
+  --page-width: max(760px, calc(15vw + 646px));
+  --gutter: 24px;
+  --nav-height: 64px;
+  --fade: 0.2s ease;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--fade), color var(--fade);
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--page-width) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ── Links and buttons ────────────────────────────────────────
+   No borders, no boxes. Clickable text is bold; on hover/focus it
+   turns purple and a thick purple underline fades in. The underline
+   is always there (transparent), so nothing moves or resizes.
+   ───────────────────────────────────────────────────────────── */
+.link {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--text-strong);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  transition: color var(--fade), text-decoration-color var(--fade);
+}
+
+.link:hover,
+.link:active,
+.link:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.link.is-active {
+  color: var(--accent);
+}
+
+.link:disabled {
+  color: var(--muted);
+  cursor: default;
+  text-decoration-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -100px;
+  z-index: 20;
+  background: var(--bg);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── Nav ──────────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  transition: background-color var(--fade), border-color var(--fade);
+}
+
+.nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: var(--nav-height);
+  font-size: 0.9375rem;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav__menu-button {
+  display: none;
+}
+
+.nav__theme {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .nav__menu-button {
+    display: block;
+    /* comfortable tap target without a visible box */
+    padding: 12px 0;
+  }
+
+  .nav__links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-bottom: 16px;
+  }
+
+  .nav__links[data-open='true'] {
+    display: flex;
+  }
+
+  .nav__links .link {
+    padding: 10px 0;
+    font-size: 1.0625rem;
+  }
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  padding-top: clamp(36px, 8vh, 80px);
+  padding-bottom: clamp(36px, 7vh, 70px);
+  scroll-margin-top: var(--nav-height);
+}
+
+.hero__name {
+  font-size: clamp(2.75rem, 11vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text-strong);
+}
+
+.hero__name-line {
+  display: block;
+}
+
+.hero__title {
+  margin-top: 24px;
+  font-size: clamp(1.25rem, 3.6vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text-strong);
+}
+
+.hero__tagline {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  max-width: 34em;
+  color: var(--muted);
+}
+
+/* In the contact section, Download CV sits on the right edge of the layout. */
+.contact__cv {
+  margin-left: auto;
+}
+
+/* ── Sections ─────────────────────────────────────────────── */
+.section {
+  padding-block: clamp(32px, 5vh, 56px);
+  scroll-margin-top: var(--nav-height);
+}
+
+.section__heading {
+  margin-bottom: 40px;
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+}
+
+.prose p + p {
+  margin-top: 1.2em;
+}
+
+/* ── Projects ─────────────────────────────────────────────── */
+.projects {
+  border-top: 1px solid var(--line);
+}
+
+.project {
+  border-bottom: 1px solid var(--line);
+  transition: border-color var(--fade);
+}
+
+.project__heading {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.project__toggle {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: 30px 0;
+  margin: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project__title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.project__title,
+.project__indicator {
+  font-size: clamp(1.1875rem, 3.6vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+  transition: color var(--fade);
+}
+
+.project__indicator {
+  flex: none;
+  width: 1ch;
+  text-align: center;
+}
+
+/* Project titles turn purple on hover, press and keyboard focus. No underline. */
+.project__toggle:hover .project__title,
+.project__toggle:active .project__title,
+.project__toggle:focus-visible .project__title,
+.project__toggle:hover .project__indicator,
+.project__toggle:active .project__indicator,
+.project__toggle:focus-visible .project__indicator {
+  color: var(--accent);
+}
+
+/* Descriptions run from the left edge to about 80% of the project's width.
+   On phones they use the full width, where 80% would be too cramped. */
+.project__summary {
+  display: block;
+  margin-top: 10px;
+  max-width: 80%;
+}
+
+@media (max-width: 720px) {
+  .project__summary,
+  .project__body {
+    max-width: 100%;
+  }
+}
+
+/* Smooth expand/collapse: animating grid rows from 0fr to 1fr works for any
+   content height. visibility keeps collapsed links out of the tab order. */
+.project__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  transition: grid-template-rows 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.project__panel[data-open='true'] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows 0.35s ease, visibility 0s;
+}
+
+.project__panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.project__body {
+  display: grid;
+  gap: 24px;
+  justify-items: start;
+  padding-bottom: 36px;
+  max-width: 80%;
+}
+
+.project__image {
+  width: 100%;
+  border: 1px solid var(--line);
+}
+
+/* ── Skills ───────────────────────────────────────────────── */
+.skills {
+  display: grid;
+  gap: 28px;
+}
+
+.skills dd {
+  margin-top: 4px;
+  font-size: clamp(1.125rem, 3.2vw, 1.375rem);
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+/* ── Contact ──────────────────────────────────────────────── */
+.form {
+  display: grid;
+  gap: 28px;
+  justify-items: start;
+  max-width: 32em;
+}
+
+.form__field {
+  display: block;
+  width: 100%;
+}
+
+.form input[type='text'],
+.form input[type='email'],
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--muted);
+  border-radius: 0;
+  color: var(--text-strong);
+  font: inherit;
+  transition: border-color var(--fade);
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form input:focus-visible,
+.form textarea:focus-visible {
+  outline: none;
+  border-bottom-color: var(--accent);
+  box-shadow: 0 1px 0 var(--accent);
+}
+
+.form__honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* Fixed height so the page does not jump when a message appears. */
+.form__status {
+  min-height: 3.4em;
+  color: var(--text-strong);
+}
+
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin-top: 32px;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.footer {
+  padding-block: 40px 56px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}
