@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" role="img" aria-label="Certificate placeholder">
+  <rect width="1200" height="850" fill="#1c1c1f"/>
+  <text x="600" y="415" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="40" font-weight="700" fill="#d4d4d8">Certificate image</text>
+  <text x="600" y="470" text-anchor="middle" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="24" fill="#8f8f98">Add your picture to public/certificates/ and set its path in src/data/site.js</text>
+</svg>

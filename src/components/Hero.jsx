@@ -13,9 +13,8 @@ export default function Hero() {
       </h1>
       <p className="hero__title">{site.title}</p>
       <p className="hero__tagline">{site.tagline}</p>
-      <a className="link" href={site.cvFile} download>
-        Download CV ↓
-      </a>
+      {/* Plain text, not a link: it just points visitors down the page. */}
+      <p className="hero__explore">Explore my projects ↓</p>
     </section>
   )
 }

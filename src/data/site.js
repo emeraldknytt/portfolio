@@ -1,47 +1,45 @@
-// ─────────────────────────────────────────────────────────────
-// EDIT THIS FILE to change your personal details.
-// Everything on the page except the projects list comes from here.
-// Projects live next door in projects.json.
-// (The browser-tab title and share preview text are in /index.html.)
-// ─────────────────────────────────────────────────────────────
-
 export const site = {
-  // EDIT: your name (nav bar, hero, footer)
+
   name: 'Uchechukwu Lawal',
 
-  // EDIT: one-line title under your name
-  title: 'Automation Builder: n8n & AI Workflows',
+  title: "AI Automation Architect",
 
-  // EDIT: short tagline in the hero
-  tagline:
-    'I build automations that take repetitive work off people’s plates: connecting apps, moving data and putting AI to work where it actually helps.',
+  tagline: "I design and build intelligent automation systems that connect applications, orchestrate AI-powered workflows, and transform complex business processes into streamlined, scalable solutions.",
 
-  // EDIT: your bio. Each string is one paragraph.
   bio: [
-    'PLACEHOLDER BIO. Replace this with two or three sentences about who you are, what kind of automation work you enjoy and what you are looking for next.',
-    'A second paragraph is optional. Delete this line if one is enough.',
+    'An AI Automation Architect passionate about building intelligent systems that solve real-world business problems. I use n8n, AI models, APIs, and application integrations to transform manual processes into efficient, automated workflows. With a foundation in AI data evaluation and formal AI & Automation training from TS Academy, I focus on creating practical solutions that help businesses save time, simplify operations, and work smarter.'
   ],
 
-  // EDIT: your skills, grouped. Add, remove or rename groups freely.
   skills: [
-    { group: 'Automation', items: ['n8n', 'Make.com'] },
-    { group: 'AI', items: ['OpenAI / LLMs', 'Prompt design'] },
-    { group: 'Integration', items: ['APIs & webhooks', 'Google Sheets'] },
+    { group: 'Automation', items: ['n8n', 'Make', 'Zapier'] },
+    { group: 'AI', items: ['ChatGPT', 'Claude', 'Gemini', 'Prompt design'] },
+    { group: 'Integration', items: ['APIs & webhooks', 'Google Sheets', 'supabase', 'Airtable'] },
     { group: 'Front end', items: ['HTML / CSS', 'React'] },
   ],
 
-  // EDIT: your profile links
+  // Professional certifications. Each entry is one expandable row.
+  // To show your certificate: save the picture in public/certificates/
+  // (e.g. public/certificates/ts-academy.png) and put its path in "image",
+  // starting with a slash: '/certificates/ts-academy.png'.
+  // A full web address (https://...) to an image also works.
+  certifications: [
+    {
+      title: 'AI & Automation',
+      issuer: 'TS Academy',
+      detail: 'Three-month training programme',
+      date: 'Completed July 5, 2026',
+      image: '/certificates/placeholder.svg',
+    },
+  ],
+
   links: {
-    linkedin: 'https://www.linkedin.com/in/YOUR-HANDLE',
-    github: 'https://github.com/YOUR-USERNAME',
+    linkedin: 'https://www.linkedin.com/in/uchelawal/',
+    github: 'https://github.com/emeraldknytt',
   },
 
-  // EDIT: your CV. Replace the file public/cv.pdf with your real CV
-  // (keep the same file name, or change the path here).
+
   cvFile: '/cv.pdf',
 
-  // EDIT: contact form. Get a free access key at https://web3forms.com
-  // (enter your email, they send you the key) and paste it here.
-  // This key is meant to be public, so it is safe to commit.
-  web3formsKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+
+  web3formsKey: '2c185003-0f65-4d68-883c-410a112895a0',
 }
