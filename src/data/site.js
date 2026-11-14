@@ -28,7 +28,7 @@ export const site = {
       issuer: 'TS Academy',
       detail: 'Three-month training programme',
       date: 'Completed July 5, 2026',
-      image: '/certificates/placeholder.svg',
+      image: '/certificates/ts-academy.png',
     },
   ],
 
