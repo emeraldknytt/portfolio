@@ -1,13 +1,25 @@
 [
   {
-    "id": "ai-lead-qualifier",
-    "title": "AI Lead Qualifier",
-    "summary": "PLACEHOLDER: scores inbound leads with an LLM and routes the good ones to sales.",
-    "description": "PLACEHOLDER DESCRIPTION. Explain the problem this workflow solves, what triggers it, the main steps it runs and the result. Two to four sentences is plenty for a recruiter skimming the page.",
-    "tools": ["n8n", "OpenAI", "Webhooks", "Google Sheets"],
-    "tags": ["AI", "Data"],
-    "image": "/projects/placeholder.svg",
-    "githubUrl": "https://github.com/YOUR-USERNAME/ai-lead-qualifier",
+    "id": "lead-qualification-crm",
+    "title": "Automated Lead Qualification & CRM Management",
+    "summary": "Automates customer enquiry collection, qualifies leads by budget, updates a Google Sheets CRM, and sends personalized email notifications.",
+    "description": "Built with n8n, this workflow captures customer enquiries through an online form and automatically classifies leads into High Priority or Standard Priority based on predefined budget rules. It updates or creates CRM records in Google Sheets, prevents duplicate entries using email matching, sends customer acknowledgement emails, and alerts the business owner about high-priority leads. It also calculates follow-up dates, validates submissions, handles workflow errors, and maintains an execution log.",
+    "tools": [
+    "n8n Cloud",
+    "Google Sheets",
+    "Gmail",
+    "JavaScript Expressions"
+    ],
+    "tags": [
+    "Workflow Automation",
+    "Lead Management",
+    "CRM Automation",
+    "Business Process Automation",
+    "Email Automation",
+    "Data Validation"
+    ],
+    "image": "/projects/main-workflow.png",
+    "githubUrl": "https://github.com/emeraldknytt/lead-qualification-crm",
     "type": "automation",
     "videoUrl": "",
     "caseStudy": ""
