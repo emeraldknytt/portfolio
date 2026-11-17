@@ -378,7 +378,8 @@ img {
   gap: 24px;
   justify-items: start;
   padding-bottom: 36px;
-  max-width: 80%;
+  /* Full row width, so the description lines up with the image's left and right edges. */
+  max-width: 100%;
 }
 
 .project__image {
