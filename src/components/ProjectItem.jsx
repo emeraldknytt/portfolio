@@ -36,6 +36,17 @@ export default function ProjectItem({ project }) {
         data-open={open}
       >
         <div className="project__panel-inner">
+          {/* The screenshot comes first and spans the full width of the row,
+              the same as the certificate picture. */}
+          {image && (
+            <img
+              className="project__image"
+              src={image}
+              alt={`Screenshot of the ${title} workflow`}
+              loading="lazy"
+            />
+          )}
+
           <div className="project__body">
             <p>{description}</p>
 
@@ -43,15 +54,6 @@ export default function ProjectItem({ project }) {
               <span className="label">Tools used</span>
               {tools.join(', ')}
             </p>
-
-            {image && (
-              <img
-                className="project__image"
-                src={image}
-                alt={`Screenshot of the ${title} workflow`}
-                loading="lazy"
-              />
-            )}
 
             {/* FUTURE: render project.videoUrl (demo video/GIF) and
                 project.caseStudy (problem → solution → result) here. */}
