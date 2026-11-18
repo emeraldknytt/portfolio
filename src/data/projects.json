@@ -25,17 +25,17 @@
     "caseStudy": ""
   },
   {
-    "id": "inbox-triage",
-    "title": "Inbox Triage Assistant",
-    "summary": "PLACEHOLDER: labels incoming email, drafts replies and flags anything urgent.",
-    "description": "PLACEHOLDER DESCRIPTION. Explain the problem this workflow solves, what triggers it, the main steps it runs and the result.",
-    "tools": ["n8n", "Gmail API", "OpenAI"],
-    "tags": ["Email", "AI"],
-    "image": "/projects/placeholder.svg",
-    "githubUrl": "https://github.com/YOUR-USERNAME/inbox-triage",
-    "type": "automation",
-    "videoUrl": "",
-    "caseStudy": ""
+  "id": "customer-feedback-collector",
+  "title": "Customer Feedback Collector with Negative-Review Alerts",
+  "summary": "An n8n automation that logs customer feedback, sends rating-based follow-up emails, and alerts the business owner on Telegram the moment a customer is unhappy.",
+  "description": "Small businesses often miss unhappy customers until it is too late to win them back. When a customer submits an n8n-hosted feedback form, the workflow cleans and classifies the response by rating, logs it to Google Sheets, and sends a tailored follow-up email through Gmail. Negative feedback triggers an instant Telegram alert to the owner and is marked as alerted in the sheet, while a separate error workflow emails the owner if any step fails.",
+  "tools": ["n8n", "Google Sheets", "Gmail", "Telegram"],
+  "tags": ["Automation", "Customer Support", "Feedback Management", "Notifications", "Error Handling"],
+  "image": "/projects/customer-feedback-collector/workflow-canvas-active.png",
+  "githubUrl": "https://github.com/emeraldknytt/customer-feedback-collector",
+  "type": "automation",
+  "videoUrl": "",
+  "caseStudy": ""
   },
   {
     "id": "weekly-report-sync",
